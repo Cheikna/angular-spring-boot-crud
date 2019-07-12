@@ -11,6 +11,7 @@ import com.crud.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 public class UserController {
 	
 	@Autowired
