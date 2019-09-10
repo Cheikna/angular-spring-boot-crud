@@ -9,6 +9,7 @@ export class UserService {
 
   private baseUrl: string = "http://localhost:8090/api";
   private headers = new HttpHeaders();
+  private user: User = new User();
 
   constructor(private http: HttpClient) {
     this.headers.append('Accept', 'application/json');
@@ -28,10 +29,18 @@ export class UserService {
   }
   
   createUser(user: User){
-    return this.http.post(this.baseUrl + "/user", JSON.stringify(user), {headers: this.headers});
+    return this.http.post(this.baseUrl + "/user", JSON.stringify(user));
   }
 
   updateUser(user: User){
-    return this.http.put(this.baseUrl + "/user", JSON.stringify(user), {headers: this.headers});
+    return this.http.put(this.baseUrl + "/user", JSON.stringify(user));
+  }
+
+  set $user(user: User){
+    this.user = user;
+  }
+
+  get $user(){
+    return this.user;
   }
 }

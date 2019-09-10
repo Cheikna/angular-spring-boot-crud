@@ -7,18 +7,25 @@ import { ListUserComponent } from './components/list-user/list-user.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import  { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import  { MatButtonModule } from '@angular/material';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListUserComponent,
-    UserFormComponent
+    UserFormComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
