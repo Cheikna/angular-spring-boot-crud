@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+// https://angular.io/guide/build
 export abstract class RestService {
 
   private readonly serverUrl: string = "";
